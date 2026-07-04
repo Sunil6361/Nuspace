@@ -1,0 +1,53 @@
+body{
+
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+
+}
+
+header{
+
+    background:#111;
+    color:white;
+    padding:20px;
+    text-align:center;
+
+}
+
+.project-details{
+
+    width:90%;
+    margin:40px auto;
+
+    display:flex;
+    gap:40px;
+
+}
+
+.project-image img{
+
+    width:600px;
+    border-radius:10px;
+
+}
+
+.project-info{
+
+    flex:1;
+
+}
+
+.project-info h2{
+
+    font-size:40px;
+    margin-bottom:20px;
+
+}
+
+.project-info p{
+
+    font-size:20px;
+    line-height:35px;
+
+}

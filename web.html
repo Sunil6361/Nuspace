@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NuSpace Creations</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="web.css">
+
+    <!-- Font Awesome for WhatsApp Icon -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER SECTION ================= -->
+    <header>
+        <div class="logo">
+            <h1>NuSpace Creations</h1>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+            <a href="login.html" class="login-btn">Login</a>
+          
+        </nav>
+    </header>
+
+    <!-- ================= HOME SECTION ================= -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Transforming Spaces Into Perfection</h2>
+            <p>Professional Interior Design Solutions For Modern Living</p>
+            <button>Get Free Consultation</button>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT SECTION ================= -->
+   <section id="about">
+
+    <h2 id="aboutHeading">About Us</h2>
+
+    <div style="display:flex;gap:30px;align-items:center;flex-wrap:wrap;">
+
+        <div style="flex:1;min-width:300px;">
+
+            <p id="aboutText"></p>
+
+        </div>
+
+        <div style="flex:1;text-align:center;min-width:300px;">
+
+            <img
+                id="aboutImageDisplay"
+                src=""
+                alt="About Image"
+                style="width:100%;max-width:450px;border-radius:10px;display:none;">
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- ================= SERVICES SECTION ================= -->
+<section id="services">
+
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="services-container">
+
+        <div class="service-card">
+            <img src="uploads/service/KS.jpg" alt="Kitchen">
+            <div class="service-content">
+                <h3>Modular Kitchen Design</h3>
+                <p>Modern and functional kitchen solutions tailored to your lifestyle.</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="uploads/service/LS.jpg" alt="Living Room">
+            <div class="service-content">
+                <h3>Living Room Interior</h3>
+                <p>Elegant and comfortable living spaces with premium finishes.</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="uploads/service/BS.jpg" alt="Bedroom">
+            <div class="service-content">
+                <h3>Bedroom Interior Design</h3>
+                <p>Stylish and relaxing bedroom designs for maximum comfort.</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="uploads/service/TS.jpg" alt="TV Unit">
+            <div class="service-content">
+                <h3>TV Unit Design</h3>
+                <p>Customized TV units with modern storage and aesthetic appeal.</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="uploads/service/DS.jpg" alt="Dining">
+            <div class="service-content">
+                <h3>Dining Area Design</h3>
+                <p>Beautiful dining spaces that combine functionality and elegance.</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="uploads/service/OS.jpg" alt="Office">
+            <div class="service-content">
+                <h3>Office Interior Design</h3>
+                <p>Professional and productive workspace solutions.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+    <!-- ================= PROJECTS SECTION ================= -->
+    <section id="projects" class="projects">
+
+    <h2>Recent Projects</h2>
+
+    <p class="project-subtitle">
+        Explore some of our latest interior design projects.
+    </p>
+
+    <div class="project-container" id="projectContainer">
+
+    </div>
+
+</section>
+<!-- ================= GALARY SECTION ================= -->
+<section id="gallery">
+
+    <h2>Our Gallery</h2>
+
+    <!-- Top Row -->
+    <div class="gallery-row top-row">
+        <div class="gallery-track" id="topGalleryTrack">
+            <!-- Images will be loaded automatically from the database -->
+        </div>
+    </div>
+
+    <!-- Bottom Row -->
+    <div class="gallery-row bottom-row">
+        <div class="gallery-track" id="bottomGalleryTrack">
+            <!-- Images will be loaded automatically from the database -->
+        </div>
+    </div>
+
+</section>
+
+    <!-- ================= CONTACT SECTION ================= -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+
+       <form id="contactForm">
+
+    <input type="text" id="name" placeholder="Enter Name" required>
+
+    <input type="email" id="email" placeholder="Enter Email" required>
+
+    <input type="tel" id="mobile" placeholder="Enter Mobile Number" required>
+
+    <textarea id="message" rows="5" placeholder="Enter Message" required></textarea>
+
+    <button type="submit">Send Inquiry</button>
+
+</form>
+    </section>
+
+    <!-- ================= GOOGLE MAP SECTION ================= -->
+    <section class="map-section">
+
+        <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248815.57510023064!2d77.45715604437633!3d12.988259667280275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1782312276901!5m2!1sen!2sin"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+
+    </section>
+
+    <!-- ================= FOOTER SECTION ================= -->
+    <footer>
+        <p>© 2026 NuSpace Creations. All Rights Reserved.</p>
+    </footer>
+
+    <!-- ================= WHATSAPP BUTTON ================= -->
+    <a href="https://wa.me/918296217152"
+    class="whatsapp"
+    target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- INSTAGRAM BUTTON -->
+<a href="https://www.instagram.com/sunil_rathod7545"
+class="instagram"
+target="_blank">
+    <i class="fa-brands fa-instagram"></i>
+</a>
+<script src="script.js"></script>
+
+
+</body>
+</html>

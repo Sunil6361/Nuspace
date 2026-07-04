@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    margin:0;
+    background:#f4f4f4;
+}
+
+header{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+    padding:30px 0;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.content-section{
+    display:none;
+    background:white;
+    padding:20px;
+    margin-top:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    width:100%;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th{
+    background:#222;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+tr:nth-child(even){
+    background:#f9f9f9;
+}
+
+button{
+    background:red;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:darkred;
+}
+
+.logout{
+    display:inline-block;
+    margin-top:30px;
+    background:red;
+    color:white;
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Admin Dashboard</h1>
+</header>
+
+<div class="container">
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <h2>Admin Panel</h2>
+
+        <button onclick="showSection('contacts')">📩 Contact Messages</button>
+
+        <button onclick="showSection('projects')">🏠 Manage Projects</button>
+
+        <button onclick="showSection('services')">🛠 Manage Services</button>
+
+        <button onclick="showSection('gallery')">🖼 Manage Gallery</button>
+
+        <button onclick="showSection('about')">ℹ Manage About Us</button>
+        <button onclick="showSection('changePassword')">🔑 Change Password</button>
+
+        <a href="login.html" class="logout-btn">🚪 Logout</a>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        
+
+<!-- CONTACTS -->
+
+<div id="contacts" class="content-section">
+
+<h2>Contact Inquiries</h2>
+
+<table id="contactTable">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Mobile</th>
+
+<th>Message</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- PROJECTS -->
+
+<!-- ================= PROJECTS ================= -->
+
+<div id="projects" class="content-section">
+
+    <h2>🏠 Manage Projects</h2>
+
+    <form id="projectForm" enctype="multipart/form-data">
+
+        <label>Project Image</label><br>
+
+        <input
+            type="file"
+            id="projectImage"
+            accept="image/*"
+            required>
+
+        <br><br>
+
+        <label>Project Title</label><br>
+
+        <input
+            type="text"
+            id="projectTitle"
+            placeholder="Enter Project Title"
+            style="width:100%;padding:10px;"
+            required>
+
+        <br><br>
+
+        <label>Category</label><br>
+
+        <select
+            id="projectCategory"
+            style="width:100%;padding:10px;"
+            required>
+
+            <option value="">Select Category</option>
+
+            <option>Living Room</option>
+
+            <option>Bedroom</option>
+
+            <option>Kitchen</option>
+
+            <option>Dining</option>
+
+            <option>Office</option>
+
+            <option>TV Unit</option>
+
+        </select>
+
+        <br><br>
+
+        <label>Description</label><br>
+
+        <textarea
+            id="projectDescription"
+            rows="5"
+            style="width:100%;padding:10px;"
+            required></textarea>
+
+        <br><br>
+
+        <button type="submit">
+
+            Add Project
+
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="projectMessage"></div>
+
+    <hr>
+
+    <h3>All Projects</h3>
+
+    <div id="projectContainer"></div>
+
+</div>
+
+<!-- SERVICES -->
+
+<div id="services" class="content-section">
+
+<h2>Manage Services</h2>
+
+<p>Services Management Module Coming Soon...</p>
+
+</div>
+
+<!-- GALLERY -->
+
+<div id="gallery" class="content-section">
+    
+
+    <h2>🖼 Manage Gallery</h2>
+
+    <form id="galleryForm">
+
+       <input type="file" id="galleryImage" accept="image/*" multiple required>
+
+        <br><br>
+
+        <button type="submit">Upload Image</button>
+
+    </form>
+
+    <br>
+
+    <div id="galleryMessage"></div>
+    <div id="adminGalleryContainer"></div>
+
+</div>
+
+<!-- ABOUT -->
+
+<!-- ABOUT -->
+
+<div id="about" class="content-section">
+
+    <h2>Manage About Us</h2>
+
+    <form id="aboutForm" enctype="multipart/form-data">
+
+        <label>Title</label><br>
+
+        <input
+            type="text"
+            id="aboutTitle"
+            style="width:100%;padding:10px;"
+            required>
+
+        <br><br>
+
+        <label>Description</label><br>
+
+        <textarea
+            id="aboutDescription"
+            rows="6"
+            style="width:100%;padding:10px;"
+            required></textarea>
+
+        <br><br>
+
+        <label>About Image</label><br>
+
+        <input
+            type="file"
+            id="aboutImage"
+            accept="image/*">
+
+        <br><br>
+
+        <img
+            id="aboutPreview"
+            width="250"
+            style="display:none;border-radius:10px;">
+
+        <br><br>
+
+        <button type="submit">
+            Update About
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="aboutMessage"></div>
+
+</div>
+
+<!-- CHANGE PASSWORD -->
+
+<div id="changePassword" class="content-section">
+
+    <h2>🔑 Change Password</h2>
+
+    <form id="changePasswordForm">
+
+        <input type="password"
+               id="currentPassword"
+               placeholder="Current Password"
+               required>
+
+        <br><br>
+
+        <input type="password"
+               id="newPassword"
+               placeholder="New Password"
+               required>
+
+        <br><br>
+
+        <input type="password"
+               id="confirmPassword"
+               placeholder="Confirm New Password"
+               required>
+
+        <br><br>
+
+        <button type="submit">
+            Change Password
+        </button>
+
+    </form>
+
+    <br>
+
+    <div id="passwordMessage"></div>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>
