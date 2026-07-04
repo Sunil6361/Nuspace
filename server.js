@@ -1,5 +1,5 @@
 const express = require("express");
-const mysql = require("mysql2");
+
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
@@ -100,19 +100,23 @@ app.get("/", (req, res) => {
 });
 
 // MySQL Connection
+require("dotenv").config();
+const mysql = require("mysql2");
+
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "Rathod@0508",
-    database: "nuspace"
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT
 });
 
 db.connect((err) => {
     if (err) {
-        console.log("Database connection failed");
-        throw err;
+        console.error("Database Connection Failed:", err);
+    } else {
+        console.log("✅ Railway MySQL Connected");
     }
-    console.log("MySQL Connected Successfully");
 });
 
 // ================= Gallery Upload =================
