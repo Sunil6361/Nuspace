@@ -12,7 +12,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
     try {
         
 
-        const response = await fetch("http://localhost:5000/contact", {
+        const response = await fetch("/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -38,7 +38,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
 function loadWebsiteGallery() {
 
-    fetch("http://localhost:5000/gallery")
+    fetch("/gallery")
         .then(res => res.json())
         .then(data => {
 
@@ -48,7 +48,7 @@ function loadWebsiteGallery() {
             data.data.forEach((img, index) => {
 
                 const imageTag = `
-                    <img src="http://localhost:5000/uploads/gallery/${img.image}" alt="Gallery Image">
+                    <img src="/uploads/gallery/${img.image}">
                 `;
 
                 if (index % 2 === 0) {
@@ -77,7 +77,7 @@ loadWebsiteGallery();
 
 function loadAboutWebsite(){
 
-    fetch("http://localhost:5000/about")
+    fetch("/about")
 
     .then(res=>res.json())
 
@@ -92,8 +92,7 @@ function loadAboutWebsite(){
         if(data.data.image){
 
             document.getElementById("aboutImageDisplay").src =
-            "http://localhost:5000/uploads/about/" +
-            data.data.image;
+            "/uploads/about/" + data.data.image
 
             document.getElementById("aboutImageDisplay").style.display =
             "block";
@@ -112,7 +111,7 @@ loadAboutWebsite();
 
 function loadWebsiteProjects() {
 
-    fetch("http://localhost:5000/projects")
+    fetch("/projects")
 
     .then(res => res.json())
 
@@ -125,7 +124,7 @@ function loadWebsiteProjects() {
            html += `
     <div class="project-box">
 
-        <img src="http://localhost:5000/uploads/projects/${project.image}" alt="${project.title}">
+       <img src="/uploads/projects/${project.image}">
 
         <div class="project-content">
 
