@@ -354,7 +354,7 @@ formData.append(
 document.getElementById("projectDescription").value
 );
 
-fetch("http://localhost:5000/projects",{
+fetch(" /projects",{
 
 method:"POST",
 
