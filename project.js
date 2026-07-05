@@ -3,7 +3,7 @@ const params = new URLSearchParams(window.location.search);
 const projectId = params.get("id");
 
 // Fetch project details
-fetch(`http://localhost:5000/project/${projectId}`)
+fetch(`/project/${projectId}`)
     .then(res => res.json())
     .then(data => {
 
@@ -20,8 +20,8 @@ fetch(`http://localhost:5000/project/${projectId}`)
         document.getElementById("projectLocation").innerText = project.location;
         document.getElementById("projectArea").innerText = project.area;
 
-        document.getElementById("projectImage").src =
-            `http://localhost:5000/uploads/projects/${project.image}`;
+       document.getElementById("projectImage").src =
+    `/uploads/projects/${project.image}`;
 
     })
     .catch(err => console.log(err));
